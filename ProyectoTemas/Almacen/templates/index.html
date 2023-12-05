@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <title>Almacen</title>
+</head>
+
+<body>
+    <h2>Productos</h2>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td><a href='updateproduct/{{ product.id }}'>Editar</a></td>
+                    <td><a href='deleteproduct/{{ product.id }}'>Eliminar</a></td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="addproduct">Añade un nuevo producto</a>
+</body>
